@@ -5,7 +5,7 @@ abs_number = abs(number)
 lastdigit = abs_number % 10
 
 if number < 0 and lastdigit > 0:
-	lastdigit = -1 * lastdigit
+    lastdigit = -1 * lastdigit
 
 if lastdigit > 5:
     print(f"Last digit of {number} is {lastdigit} and is greater than 5")
