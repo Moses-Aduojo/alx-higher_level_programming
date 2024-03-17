@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    import marshal
-    import dis
+    import importlib.util
 
-    with open("hidden_4.pyc", "rb") as f:
-        bytecodes = f.read()
+    # Load the compiled module hidden_4.pyc
+    spec = importlib.util.spec_from_file_location("hidden_4", "hidden_4.pyc")
 
-    code_object = marshal.loads(bytecodes)
-    instructions = dis.get_instructions(code_object)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
 
-    names = set()
+    # Get all names defined in the module
+    names = dir(module)
 
-    for instruction in instructions:
-        if instruction.opname == 'LOAD_GLOBAL':
-            name = instruction.argval
-            if not name.startswith("__"):
-                names.add(name)
-    for name in sorted(names):
+    # Filter out names that start with "__"
+    filtered_names = [name for name in names if not name.startswith("__")]
+
+    # Print the filtered names in alphabetical order
+    for name in sorted(filtered_names):
         print(name)
+
