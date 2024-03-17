@@ -18,4 +18,3 @@ if __name__ == "__main__":
     # Print the filtered names in alphabetical order
     for name in sorted(filtered_names):
         print(name)
-
