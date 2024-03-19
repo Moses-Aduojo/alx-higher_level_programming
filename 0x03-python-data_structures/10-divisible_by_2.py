@@ -6,6 +6,8 @@ def divisible_by_2(my_list=[]):
     else:
         new_list = my_list[:]
         for i in range(len(new_list) - 1):
+            if new_list[i] < 0:
+                new_list[i] = new_list[i] * -1
             if new_list[i] % 2 == 0:
                 new_list[i] = True
             else:
