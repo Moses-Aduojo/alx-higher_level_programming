@@ -11,6 +11,9 @@ class Rectangle:
     This class provide a a template for the creation of
     a Rectangle object
     """
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         intitialized Rectangle object properties when a new object is
@@ -19,6 +22,7 @@ class Rectangle:
 
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -103,3 +107,10 @@ class Rectangle:
             str: String representation of the rectangle.
         """
         return f'Rectangle({self.width}, {self.height})'
+
+    def __del__(self):
+        """Destructor that prints a message when the rectangle instance\
+        is deleted.
+        """
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
