@@ -94,3 +94,18 @@ class Rectangle:
         for _ in range(self.height):
             rectangle_str += '#' * self.width + '\n'
         return rectangle_str[:-1]  # remove the last newline character
+
+    def __repr__(self):
+        """Returns a string representation of the rectangle\
+        suitable for eval().
+
+        Returns:
+            str: String representation of the rectangle.
+        """
+        return f'Rectangle({self.width}, {self.height})'
+
+    def __del__(self):
+        """Destructor that prints a message when the rectangle instance\
+        is deleted.
+        """
+        print("Bye rectangle...")
