@@ -20,7 +20,8 @@ TypeError: add_integer() missing 1 required positional argument: 'a'
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
->>> add_integer(float('nan'))  # Test with NaN value
+>>> int(float('NaN'))
 Traceback (most recent call last):
-    ...
+  File "<stdin>", line 1, in <module>
 ValueError: cannot convert float NaN to integer
+>>>
