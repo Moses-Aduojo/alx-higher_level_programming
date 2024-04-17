@@ -12,8 +12,15 @@
 Traceback (most recent call last):
     ...
 TypeError: b must be an integer
+>>> add_integer()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: add_integer() missing 1 required positional argument: 'a'
 >>> add_integer(None)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
-
+>>> add_integer(float('nan'))  # Test with NaN value
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
