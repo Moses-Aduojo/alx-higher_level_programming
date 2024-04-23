@@ -6,6 +6,7 @@ Module containing the Rectangle class, which represents a rectangle shape.
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """
     A class representing a rectangle.
@@ -25,9 +26,12 @@ class Rectangle(Base):
         Args:
             width (int): The width of the rectangle.
             height (int): The height of the rectangle.
-            x (int, optional): The x-coordinate of the rectangle's position. Defaults to 0.
-            y (int, optional): The y-coordinate of the rectangle's position. Defaults to 0.
-            id (int, optional): The unique identifier of the rectangle. Defaults to None.
+            x (int, optional): The x-coordinate of the
+                rectangle's position. Defaults to 0.
+            y (int, optional): The y-coordinate of the
+                rectangle's position. Defaults to 0.
+            id (int, optional): The unique identifier
+                of the rectangle. Defaults to None.
         """
         super().__init__(id)
         self.__width = width
