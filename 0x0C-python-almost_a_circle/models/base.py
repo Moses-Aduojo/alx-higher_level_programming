@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 This module define base class for rectangle class
 """
