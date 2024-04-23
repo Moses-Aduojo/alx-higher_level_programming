@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Module containing the Rectangle class, which represents a rectangle shape.
+"""
+
+
 from models.base import Base
 
 class Rectangle(Base):
