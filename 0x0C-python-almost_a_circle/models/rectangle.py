@@ -109,48 +109,28 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """
-        Get the x-coordinate of the rectangle's position.
-
-        Returns:
-            int: The x-coordinate of the rectangle's position.
-        """
+        """Get the x-coordinate of the rectangle's position."""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """
-        Set the x-coordinate of the rectangle's position.
-
-        Args:
-            value (int): The new x-coordinate of the rectangle's position.
-        """
+        """Set the x-coordinate of the rectangle's position."""
         if not isinstance(value, int):
             raise TypeError("x must be an integer")
-        if value < 0:
-            raise ValueError("x must be > 0")
+        elif value < 0:
+            raise ValueError("x must be >= 0")
         self.__x = value
 
     @property
     def y(self):
-        """
-        Get the y-coordinate of the rectangle's position.
-
-        Returns:
-            int: The y-coordinate of the rectangle's position.
-        """
+        """Get the y-coordinate of the rectangle's position."""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """
-        Set the y-coordinate of the rectangle's position.
-
-        Args:
-            value (int): The new y-coordinate of the rectangle's position.
-        """
+        """Set the y-coordinate of the rectangle's position."""
         if not isinstance(value, int):
             raise TypeError("y must be an integer")
-        if value < 0:
-            raise ValueError("y must be > 0")
+        elif value < 0:
+            raise ValueError("y must be >= 0")
         self.__y = value
