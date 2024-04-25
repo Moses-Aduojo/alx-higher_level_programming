@@ -10,7 +10,6 @@ from models.base import Base
 class Rectangle(Base):
     """
     A class representing a rectangle.
-
     Attributes:
         width (int): The width of the rectangle.
         height (int): The height of the rectangle.
@@ -153,17 +152,30 @@ class Rectangle(Base):
         return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}\
 /{self.height}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """update assign its arg to each attribute"""
-        if len(args) == 1:
-            self.id = args[0]
-        elif len(args) == 2:
-            self.id, self.width = args
-        elif len(args) == 3:
-            self.id, self.width, self.height = args
-        elif len(args) == 4:
-            self.id, self.width, self.height, self.x = args
-        elif len(args) == 5:
-            (self.id, self.width, self.height, self.x, self.y) = args
+        if args:
+            if len(args) == 1:
+                self.id = args[0]
+            elif len(args) == 2:
+                self.id, self.width = args
+            elif len(args) == 3:
+                self.id, self.width, self.height = args
+            elif len(args) == 4:
+                self.id, self.width, self.height, self.x = args
+            elif len(args) == 5:
+                (self.id, self.width, self.height, self.x, self.y) = args
+            else:
+                raise ValueError("Invalid number of arguments\
+ for update method")
+
+        if args and kwargs:  # skip kwags if args
+            return
+
+        if kwargs:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
         else:
-            raise ValueError("Invalid number of arguments for update method")
+            raise AttributeError(f"Rectangle instance has\
+ no attribute '{key}'")
