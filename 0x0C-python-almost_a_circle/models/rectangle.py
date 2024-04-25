@@ -143,8 +143,10 @@ class Rectangle(Base):
         """print a visual or graphical representation of the
         reactangle instance with '#'
         """
+        for i in range(self.y):
+            print()
         for i in range(self.height):
-            print('#' * self.width)
+            print(" " * self.x + "#" * self.width)
 
     def __str__(self):
         """return a customize representation of the rectangle instance"""
