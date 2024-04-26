@@ -57,3 +57,12 @@ class Square(Rectangle):
                     setattr(self, key, value)
                 else:
                     raise AttributeError("invalid attribute")
+
+    def to_dictionary(self):
+        """Return dictionary representation of Square instance"""
+        return {
+                'id': self.id,
+                'size': self.size,
+                'x': self.x,
+                'y': self.y
+                }
