@@ -29,8 +29,6 @@ class Base:
         """return json list representaion of list_dictionary
         parameter: list_dictionaries - a list of dictionary
         """
-        print(type(list_dictionaries))
-        print(list_dictionaries)
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         else:
