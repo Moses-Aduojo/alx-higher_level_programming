@@ -76,3 +76,21 @@ class Base:
             """find out why **dictionary and not dictionary as in below"""
             dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """load json representation fom file an create list of instances based
+        the data
+        """
+        filename = f"{cls.__name__}.json"
+
+        try:
+            with open(filename, "r") as file:
+                data = file.read()
+        except FileNotFoundError:
+            return []
+
+        dict_list = cls.from_json_string(data)
+
+        instances_list = [cls.create(**dictionary) for dictionary in dict_list]
+        return instances_list
