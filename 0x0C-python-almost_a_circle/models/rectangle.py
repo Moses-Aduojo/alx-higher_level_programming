@@ -178,7 +178,7 @@ class Rectangle(Base):
                     setattr(self, key, value)
         else:
             raise AttributeError(f"Rectangle instance has\
- no attribute '{key}'")
+ no attribute {key}")
 
     def to_dictionary(self):
         """Return dictionary representation of Rectangle instance"""
